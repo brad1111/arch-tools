@@ -17,7 +17,6 @@ fi
 
 echo $UCODE
 
-exit
 #backup old copy
 if [[ -e $LINUXDIR/$KERNEL_SUFFIX.efi ]]; then
 	mv $LINUXDIR/$KERNEL_SUFFIX{,-backup}.efi
