@@ -1,0 +1,11 @@
+[Trigger]
+Type = Package 
+Operation = Install
+Operation = Upgrade
+Target = systemd 
+
+[Action]
+Description = Systemd update & secure-boot setup 
+When = PostTransaction
+Exec = /usr/bin/sh -c "bootctl update && sbsign --key /etc/secure-boot/db.key --cert /etc/secure-boot/db.crt --out /boot/EFI/systemd/systemd-bootx64.efi{,}" 
+NeedsTargets
